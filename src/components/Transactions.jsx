@@ -11,7 +11,7 @@ export const Transaction = ({transactions}) =>{
         </thead>
         <tbody>
             {transactions.map(({id, type, amount, currency}) =>(
-            <tr>
+            <tr> id ={id}
                 <td>{type}</td>
                 <td>{amount}</td>
                 <td>{currency}</td>
@@ -21,4 +21,14 @@ export const Transaction = ({transactions}) =>{
   </tbody>
   </table>
     );
+};
+Transaction.PropTypes ={
+ transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        type: PropTypes.string.isRequired,
+        amount: PropTypes.number.isRequired,
+        currency: PropTypes.string.isRequired,
+    }),
+ ).isRequired
 };
