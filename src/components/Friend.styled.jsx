@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Friend } from './Friend';
 export const Status = styled.span`
   display: block;
   width: 20px;
