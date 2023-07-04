@@ -8,7 +8,7 @@ export const Friend = ({avatar, name, isOnline, id}) => {
         </li>
         );
 };
-Friend.PropTypes ={
+Friend.propTypes ={
     id: PropTypes.number.isRequired,
     status: PropTypes.bool.isRequired,
     avatar: PropTypes.string.isRequired,
