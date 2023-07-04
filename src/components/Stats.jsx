@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import css from './Stats.module.css'
 export const Statistics = ({stats}) =>{
     return (
 <section class="statistics">
