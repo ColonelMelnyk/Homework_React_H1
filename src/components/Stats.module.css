@@ -42,7 +42,9 @@ background-color: lightslategray;
 }
 .label{
     color: #ffffff;
+    font-weight: 800;
 }
 .percentage{
     color: #ffffff;
+    font-weight: 400;
 }

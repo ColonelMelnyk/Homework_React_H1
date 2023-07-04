@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
-import css from './Friend.module.css'
+import { Status, ListMember, FriendName } from './Friend.styled';
 export const Friend = ({avatar, name, isOnline, id}) => {
     return (
-        <li class="item" id ={id}>
-        <span class="status">{isOnline}</span>
-        <img class="avatar" src={avatar} alt="User avatar" width="48" />
-        <p class="name">{name}</p>
-        </li>
+        <ListMember id ={id}>
+        <Status isOnline = {isOnline}/>
+        <img src={avatar} alt="User avatar" width="64" />
+        <FriendName>{name}</FriendName>
+        </ListMember>
         );
 };
 Friend.propTypes ={
     id: PropTypes.number.isRequired,
-    status: PropTypes.bool.isRequired,
+    isOnline: PropTypes.bool.isRequired,
     avatar: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
 };
