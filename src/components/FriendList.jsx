@@ -6,7 +6,7 @@ export const FriendList = ({friends}) => {
     <Container>
     {friends.map(friend =>(
     <Friend
-    id = {friend.id}
+    key = {friend.id}
     isOnline = {friend.isOnline}
     avatar={friend.avatar}
     name = {friend.name}
@@ -17,6 +17,10 @@ export const FriendList = ({friends}) => {
 };
 FriendList.propTypes = {
     friends: PropTypes.arrayOf(
-
+      PropTypes.shape({
+        isOnline: PropTypes.bool.isRequired,
+        avatar: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+      })
     ).isRequired,
 };

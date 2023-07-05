@@ -4,10 +4,15 @@ function generateRandomColor() {
   const randomColor = Math.round(Math.random() * 16777215).toString(16);
   return `#${randomColor}`;
 }
-export const Statistics = ({stats}) =>{
+export const Statistics = ({title, stats}) =>{
     return (
 <section className={css.statistics}>
-<h2 className={css.title}>Upload stats</h2>
+{title.length > 0 ? (
+        <h2 className={css.title}>{title}</h2>
+      ) :
+      (
+        <h2 className={css.title_disabled}> </h2>
+      )}
 <ul className={css.statlist}>
     {stats.map(stat =>(
        <li className={css.item}  key={stat.id}  style={{backgroundColor: generateRandomColor()}}>
@@ -21,7 +26,7 @@ export const Statistics = ({stats}) =>{
 };
 
 Statistics.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     stats: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
